@@ -7,88 +7,110 @@
   
   /* === Color Palette === */
   :root {
-    --bg-color: #f5f5f5;          /* light gray background */
-    --primary-color: #2a6f97;     /* calm blue */
-    --accent-color: #d4a373;      /* warm tan */
-    --text-color: #333333;        /* dark gray text */
-    --muted-color: #666666;       /* lighter text */
+    --bg-color: #f8f9fa;
+    --primary-color: #2a6f97;
+    --accent-color: #d4a373;
+    --text-color: #212529;
+    --subtle-color: #6c757d;
     --white: #ffffff;
   }
   
-  /* === Global Styles === */
+  /* === Base === */
   body {
-    font-family: 'Helvetica Neue', sans-serif;
+    font-family: 'Inter', 'Segoe UI', 'Roboto', sans-serif;
     background-color: var(--bg-color);
     color: var(--text-color);
     line-height: 1.6;
+  }
+  
+  /* === Navigation === */
+  .navbar {
+    background: var(--primary-color);
+    padding: 1rem;
+    position: relative;
+  }
+  
+  .menu-toggle {
+    display: none;
+  }
+  
+  .hamburger {
+    font-size: 2rem;
+    color: white;
+    cursor: pointer;
+    display: inline-block;
+  }
+  
+  .menu {
+    list-style: none;
+    padding: 0;
+    margin-top: 1rem;
+    display: none;
+    flex-direction: column;
+    gap: 1rem;
+  }
+  
+  .menu li a {
+    color: white;
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    display: block;
+    background: var(--accent-color);
+    border-radius: 5px;
+  }
+  
+  .menu-toggle:checked ~ .menu {
+    display: flex;
+  }
+  
+  @media (min-width: 768px) {
+    .hamburger {
+      display: none;
+    }
+  
+    .menu {
+      display: flex !important;
+      flex-direction: row;
+      margin-top: 0;
+      gap: 2rem;
+    }
+  
+    .menu li a {
+      background: none;
+      padding: 0;
+    }
+  }
+  
+  /* === Resume Container === */
+  .resume-container {
+    max-width: 900px;
+    margin: 2rem auto;
+    background-color: var(--white);
     padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
   }
   
   /* === Header === */
   header {
     text-align: center;
-    margin-bottom: 3rem;
+    margin-bottom: 2rem;
   }
   
   header h1 {
-    font-size: 2.5rem;
+    font-size: 2.2rem;
     color: var(--primary-color);
   }
   
   header p {
-    font-size: 1.2rem;
-    color: var(--muted-color);
+    font-size: 1rem;
+    color: var(--subtle-color);
   }
   
-  /* === Navigation === */
-  nav {
-    display: flex;
-    justify-content: center;
-    gap: 1.5rem;
-    margin-bottom: 2rem;
-  }
-  
-  nav a {
-    text-decoration: none;
-    color: var(--primary-color);
-    font-weight: bold;
-    padding: 0.5rem;
-    border-radius: 5px;
-    transition: background 0.3s;
-  }
-  
-  nav a:hover {
-    background-color: var(--accent-color);
-    color: var(--white);
-  }
-  
-  /* === Main Content === */
-  main {
-    max-width: 800px;
-    margin: 0 auto;
-    background: var(--white);
-    padding: 2rem;
-    border-radius: 10px;
-    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
-  }
-  
-  /* === Sections === */
-  section {
-    margin-bottom: 2rem;
-  }
-  
+  /* === Section Headings === */
   section h2 {
+    font-size: 1.3rem;
     color: var(--primary-color);
-    border-bottom: 2px solid var(--accent-color);
-    padding-bottom: 0.5rem;
-    margin-bottom: 1rem;
-  }
-  
-  /* === Footer === */
-  footer {
-    text-align: center;
-    color: var(--muted-color);
-    margin-top: 4rem;
-    font-size: 0.9rem;
-  }
+    margin-top: 2rem;
+    border-left
   
